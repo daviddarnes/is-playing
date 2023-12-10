@@ -6,7 +6,7 @@ A Web Component to indicate when an audio, or video, element is playing.
 
 ## Examples
 
-```
+```html
 <script type="module" src="is-playing.js"></script>
 
 <is-playing>
