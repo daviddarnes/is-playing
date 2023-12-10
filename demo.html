@@ -4,13 +4,22 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="description" content="Demo of component-name Web Component" />
-		<title>component-name Web Component Demo</title>
+		<title>is-playing Web Component Demo</title>
 
-		<script type="module" src="component-name.js"></script>
+		<script type="module" src="is-playing.js"></script>
 	</head>
 	<body>
-    		<component-name>
-			<!-- slotted content -->
-		</component-name>
+		<h2>Single element demo</h2>
+    		<is-playing>
+			<audio controls src="https://darn.es/sounds/daviddarnes.m4a"></audio>
+		</is-playing>
+
+		<hr>
+
+		<h2>Multiple elemnents example, with unique IDs</h2>
+		<is-playing>
+  			<audio id="audio-2" controls src="https://darn.es/sounds/daviddarnes2.m4a"></audio>
+  			<audio id="audio-3" controls src="https://darn.es/sounds/daviddarnes3.m4a"></audio>
+		</is-playing>
 	</body>
 </html>
