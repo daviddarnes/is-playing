@@ -1,31 +1,33 @@
-# `component-name`
+# `is-playing`
 
-A Web Component for…
+A Web Component to indicate when an audio, or video, element is playing.
 
-**[Demo](https://daviddarnes.github.io/component-name/demo.html)** | **[Example resource](https://darn.es/blog-post)**
+**[Demo](https://daviddarnes.github.io/is-playing/demo.html)**
 
 ## Examples
 
 ```
-<script type="module" src="component-name.js"></script>
+<script type="module" src="is-playing.js"></script>
 
-<component-name>
-  <!-- slotted content -->
-</component-name>
+<is-playing>
+  <audio controls src="https://darn.es/sounds/daviddarnes.m4a"></audio>
+</is-playing>
 ```
 
 ## Features
 
 This Web Component allows you to:
 
-- Check for…
+- Add a `playing` attribute to any `audio` or `video` element currently playing (great for polyfilling the [`:playing` CSS selector](https://developer.mozilla.org/en-US/docs/Web/CSS/:playing))
+- Add a `playing` attribute to itself
+- Fill the `playing` attribute value on the `is-playing` element with the ID of the `audio` or `video` element playing for additional selector power
 
 ## Installation
 
 You have a few options (choose one of these):
 
-1. Install via [npm](https://www.npmjs.com/package/@daviddarnes/component-name): `npm install @daviddarnes/component-name`
-1. [Download the source manually from GitHub](https://github.com/daviddarnes/component-name/releases) into your project.
+1. Install via [npm](https://www.npmjs.com/package/@daviddarnes/is-playing): `npm install @daviddarnes/is-playing`
+1. [Download the source manually from GitHub](https://github.com/daviddarnes/is-playing/releases) into your project.
 1. Skip this step and use the script directly via a 3rd party CDN (not recommended for production use)
 
 ### Usage
@@ -34,17 +36,17 @@ Make sure you include the `<script>` in your project (choose one of these):
 
 ```html
 <!-- Host yourself -->
-<script type="module" src="component-name.js"></script>
+<script type="module" src="is-playing.js"></script>
 ```
 
 ```html
 <!-- 3rd party CDN, not recommended for production use -->
-<script type="module" src="https://www.unpkg.com/@daviddarnes/component-name@1.0.0/component-name.js"></script>
+<script type="module" src="https://www.unpkg.com/@daviddarnes/is-playing@1.0.0/is-playing.js"></script>
 ```
 
 ```html
 <!-- 3rd party CDN, not recommended for production use -->
-<script type="module" src="https://esm.sh/@daviddarnes/component-name@1.0.0"></script>
+<script type="module" src="https://esm.sh/@daviddarnes/is-playing@1.0.0"></script>
 ```
 
 ## Credit
