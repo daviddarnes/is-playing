@@ -6,6 +6,23 @@
 		<meta name="description" content="Demo of is-playing Web Component" />
 		<title>is-playing Web Component Demo</title>
 
+		<style>
+			audio[playing] {
+				outline: 1px solid red;
+			}
+			
+			is-playing {
+				position: relative;
+			}
+			
+			is-playing[playing]::before {
+				content: attr(playing);
+				position: absolute;
+				top: 100%;
+				left: 0;
+			}
+		</style>
+
 		<script type="module" src="is-playing.js"></script>
 	</head>
 	<body>
