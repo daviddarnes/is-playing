@@ -2,7 +2,7 @@
 
 A Web Component to indicate when an audio, or video, element is playing.
 
-**[Demo](https://daviddarnes.github.io/is-playing/demo.html)**
+**[Demo](https://daviddarnes.github.io/is-playing/demo.html)** | **[Futher reading](https://darn.es/is-playing-web-component/)**
 
 ## Examples
 
