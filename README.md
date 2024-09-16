@@ -18,9 +18,9 @@ A Web Component to indicate when an audio, or video, element is playing.
 
 This Web Component allows you to:
 
-- Add a `playing` attribute to any `audio` or `video` element currently playing (great for polyfilling the [`:playing` CSS selector](https://developer.mozilla.org/en-US/docs/Web/CSS/:playing))
-- Add a `playing` attribute to itself
-- Fill the `playing` attribute value on the `is-playing` element with the ID of the `audio` or `video` element playing for additional selector power
+- Select and style elements depending if an `audio` or `video` element is playing, using `:state(playing)` state selector
+- Polyfill for the [`:playing` CSS selector](https://developer.mozilla.org/en-US/docs/Web/CSS/:playing)
+- Surface and utilise the ID of the `audio` or `video` element playing with a `playing` attribute value on the `is-playing` element
 
 ## Installation
 
@@ -41,12 +41,18 @@ Make sure you include the `<script>` in your project (choose one of these):
 
 ```html
 <!-- 3rd party CDN, not recommended for production use -->
-<script type="module" src="https://www.unpkg.com/@daviddarnes/is-playing@1.0.0/is-playing.js"></script>
+<script
+  type="module"
+  src="https://www.unpkg.com/@daviddarnes/is-playing@2.0.0/is-playing.js"
+></script>
 ```
 
 ```html
 <!-- 3rd party CDN, not recommended for production use -->
-<script type="module" src="https://esm.sh/@daviddarnes/is-playing@1.0.0"></script>
+<script
+  type="module"
+  src="https://esm.sh/@daviddarnes/is-playing@2.0.0"
+></script>
 ```
 
 ## Credit
