@@ -55,6 +55,25 @@ Make sure you include the `<script>` in your project (choose one of these):
 ></script>
 ```
 
+### Multiple `audio` and `video` elements
+
+`is-playing` will also reveal which audio element is playing by adding a `playing` attribute to itself with the value of the playing elements ID. Note that in order for this to happen the playing element must have an `id` and there needs to be at least 2 `audio` or `video` elements:
+
+```html
+<is-playing>
+  <audio
+    id="audio-2"
+    controls
+    src="https://darn.es/sounds/daviddarnes2.m4a"
+  ></audio>
+  <audio
+    id="audio-3"
+    controls
+    src="https://darn.es/sounds/daviddarnes3.m4a"
+  ></audio>
+</is-playing>
+```
+
 ## Credit
 
 With thanks to the following people:
