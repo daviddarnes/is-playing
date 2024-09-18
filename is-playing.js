@@ -5,23 +5,32 @@ class IsPlaying extends HTMLElement {
     }
   }
 
+  constructor() {
+    super();
+    this.internals = this.attachInternals();
+  }
+
   connectedCallback() {
+    const events = ["playing", "pause", "ended"];
+
     this.players.forEach((player) => {
-      player.addEventListener("playing", (event) => this.playing(event.target));
-      player.addEventListener("pause", (event) => this.stopped(event.target));
-      player.addEventListener("ended", (event) => this.stopped(event.target));
+      events.forEach((type) => player.addEventListener(type, this.setState));
     });
   }
 
-  playing(player) {
-    player.setAttribute("playing", "");
-    this.setAttribute("playing", player.getAttribute("id") || "");
-  }
+  setState = ({ type, target }) => {
+    if (type === "playing") {
+      this.current = target;
 
-  stopped(player) {
-    player.removeAttribute("playing");
-    this.removeAttribute("playing");
-  }
+      this.internals.states.add("playing");
+      if (target.id && this.players.length > 1) {
+        this.setAttribute("playing", target.id);
+      }
+    } else if (this.current === target) {
+      this.internals.states.delete("playing");
+      this.removeAttribute("playing");
+    }
+  };
 
   get players() {
     return this.querySelectorAll("audio, video");

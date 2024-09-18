@@ -1,42 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="description" content="Demo of is-playing Web Component" />
-		<title>is-playing Web Component Demo</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Demo of is-playing Web Component" />
+    <title>is-playing Web Component Demo</title>
 
-		<style>
-			audio[playing] {
-				outline: 1px solid red;
-			}
-			
-			is-playing {
-				position: relative;
-			}
-			
-			is-playing[playing]::before {
-				content: attr(playing);
-				position: absolute;
-				top: 100%;
-				left: 0;
-			}
-		</style>
+    <style>
+      is-playing {
+        display: grid;
+        gap: 1rem;
+      }
 
-		<script type="module" src="is-playing.js"></script>
-	</head>
-	<body>
-		<h2>Single element demo</h2>
-    		<is-playing>
-			<audio controls src="https://darn.es/sounds/daviddarnes.m4a"></audio>
-		</is-playing>
+      :state(playing) {
+        outline: 1px solid red;
+      }
 
-		<hr>
+      [playing]::after {
+        content: "\A Playing: "attr(playing);
+      }
+    </style>
 
-		<h2>Multiple elemnents example, with unique IDs</h2>
-		<is-playing>
-  			<audio id="audio-2" controls src="https://darn.es/sounds/daviddarnes2.m4a"></audio>
-  			<audio id="audio-3" controls src="https://darn.es/sounds/daviddarnes3.m4a"></audio>
-		</is-playing>
-	</body>
+    <script type="module" src="is-playing.js"></script>
+  </head>
+  <body>
+    <h2>Single element demo</h2>
+    <is-playing>
+      <audio controls src="https://darn.es/sounds/daviddarnes.m4a"></audio>
+    </is-playing>
+
+    <hr />
+
+    <h2>Multiple elements example, with unique IDs</h2>
+    <is-playing>
+      <audio
+        id="audio-2"
+        controls
+        src="https://darn.es/sounds/daviddarnes2.m4a"
+      ></audio>
+      <audio
+        id="audio-3"
+        controls
+        src="https://darn.es/sounds/daviddarnes3.m4a"
+      ></audio>
+    </is-playing>
+  </body>
 </html>

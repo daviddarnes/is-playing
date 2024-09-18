@@ -1,6 +1,6 @@
 {
   "name": "@daviddarnes/is-playing",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "A Web Component to indicate when an audio, or video, element is playing",
   "main": "is-playing.js",
   "scripts": {
